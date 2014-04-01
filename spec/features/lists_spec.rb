@@ -8,7 +8,7 @@ feature "Todo Lists" do
       visit list_path(list)
 
       list.items.each do |item|
-        expect(page).to have_content(item.name)
+        expect(page).to have_content(item.description)
       end
     end
   end
