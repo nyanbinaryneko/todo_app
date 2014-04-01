@@ -18,6 +18,8 @@ Kernel.silence_warnings {
 ActiveRecord::Migration.maintain_test_schema!
 
 RSpec.configure do |config|
+  config.include FactoryGirl::Syntax::Methods
+
   config.expect_with :rspec do |c|
     c.syntax = :expect
   end
