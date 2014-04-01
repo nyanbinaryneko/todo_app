@@ -42,7 +42,6 @@ group :development, :test do
   gem 'capybara'
   gem 'rspec-rails'
   gem 'selenium-webdriver'
-  gem 'spring'
   gem 'factory_girl_rails'
   gem 'database_cleaner'
 end
