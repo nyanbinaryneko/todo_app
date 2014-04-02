@@ -1,7 +1,7 @@
 <h1><%= @list.name %></h1>
 
 <ul>
-    <% @list.items.each do |item| %>
-        <li><%= item.description %></li>
+    <% @list.tasks.each do |task| %>
+        <li><%= task.description %></li>
     <% end %>
 </ul>
