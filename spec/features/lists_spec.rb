@@ -7,6 +7,8 @@ feature "Todo Lists" do
     scenario do
       visit list_path(list)
 
+      expect(page).to have_content(list.name)
+
       list.items.each do |item|
         expect(page).to have_content(item.description)
       end
