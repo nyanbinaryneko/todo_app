@@ -24,4 +24,8 @@ feature "Todo Lists" do
       end
     end
   end
+
+  feature "User creates a list" do
+
+  end
 end
