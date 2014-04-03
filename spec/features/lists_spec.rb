@@ -29,7 +29,7 @@ feature "Todo Lists" do
     scenario do
       visit new_list_path
 
-      fill_in :name, with: "toast"
+      fill_in :list_name, with: "toast"
       click_button :list_submit
 
       expect(page).to have_content('The list has been submitted.')
