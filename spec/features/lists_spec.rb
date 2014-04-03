@@ -2,18 +2,28 @@ require 'spec_helper'
 
 feature "Todo Lists" do
   feature "User views a list" do
-    given(:list) { create :list_with_tasks }
 
-    scenario do
-      visit list_path(list)
+    context "when the list is empty" do
+      given!(:list) { create :list }
+      scenario do
+        visit list_path(list)
 
-      expect(page).to have_content(list.name)
+        expect(page).to have_content(list.name)
+        expect(page).to have_content("does not have any tasks")
+      end
 
-      list.tasks.each do |task|
-        expect(page).to have_content(task.description)
+    end
+      given!(:list) {create :list_with_tasks }
+      scenario do
+        visit list_path(list)
+
+        expect(page).to have_content(list.name)
+        list.tasks.each do |task|
+          expect(page).to have_content(task.description)
+        end
       end
     end
-  end
+
 
   feature "User views all lists" do
     given!(:lists) { 3.times.map { create :list } }
@@ -22,17 +32,6 @@ feature "Todo Lists" do
       lists.each do |list|
         expect(page).to have_content(list.name)
       end
-    end
-  end
-
-  feature "User views an empty list" do
-    given(:list){ create :list_with_no_tasks }
-    scenario do
-      visit list_path(list)
-
-      expect(page).to have_content(list.name)
-      expect(list).to have_exactly(0).tasks
-
     end
   end
 
@@ -47,3 +46,5 @@ feature "Todo Lists" do
     end
   end
 end
+
+#context "when the list is empty" do; given!(:list) { create :list } blah blah

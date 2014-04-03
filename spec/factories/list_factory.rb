@@ -10,8 +10,5 @@ FactoryGirl.define do
       end
     end
 
-    factory :list_with_no_tasks do
-
-    end
   end
 end

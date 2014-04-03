@@ -1,7 +1,12 @@
 <h1><%= @list.name %></h1>
 
-<ul>
+
+<% if @list.tasks.empty?  %>
+    <%= @list.name %> does not have any tasks
+<% else %>
+    <ul>
     <% @list.tasks.each do |task| %>
         <li><%= task.description %></li>
     <% end %>
-</ul>
+    </ul>
+<% end %>
