@@ -45,6 +45,18 @@ feature "Todo Lists" do
       expect(page).to have_content('The list has been submitted.')
     end
   end
-end
 
-#context "when the list is empty" do; given!(:list) { create :list } blah blah
+  feature "User edits a List" do
+    given!(:list) { create :list }
+    context "User adds a task" do
+      scenario do
+        visit list_path(list)
+        click_link("Add a task")
+        fill_in :task_name, with: "shitty task#432"
+        click_button :task_submit
+
+        expect(page).to have_content("shitty task#432")
+      end
+    end
+  end
+end
