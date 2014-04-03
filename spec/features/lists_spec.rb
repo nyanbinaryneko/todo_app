@@ -25,6 +25,17 @@ feature "Todo Lists" do
     end
   end
 
+  feature "User views an empty list" do
+    given(:list){ create :list_with_no_tasks }
+    scenario do
+      visit list_path(list)
+
+      expect(page).to have_content(list.name)
+      expect(list).to have_exactly(0).tasks
+
+    end
+  end
+
   feature "User creates a list" do
     scenario do
       visit new_list_path
