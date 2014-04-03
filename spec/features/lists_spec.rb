@@ -26,6 +26,13 @@ feature "Todo Lists" do
   end
 
   feature "User creates a list" do
+    scenario do
+      visit new_list_path
 
+      fill_in :list_name, with: "toast"
+      click_button :list_submit
+
+      expect(page).to have_content('The list has been submitted.')
+    end
   end
 end
