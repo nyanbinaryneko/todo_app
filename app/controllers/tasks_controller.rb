@@ -7,10 +7,25 @@ class TasksController < ApplicationController
 
   def create
     @task = @list.tasks.new(task_params)
+
     if @task.save
       redirect_to @list
     else
       render :new
+    end
+  end
+
+  def edit
+    @task = @list.tasks.find(params[:id])
+  end
+
+  def update
+    @task = @list.tasks.find(params[:id])
+
+    if @task.update_attributes task_params
+      redirect_to @list
+    else
+      render :edit
     end
   end
 
