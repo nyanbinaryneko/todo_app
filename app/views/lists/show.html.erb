@@ -2,11 +2,11 @@
 
 
 <% if @list.tasks.empty?  %>
-    <%= @list.name %> does not have any tasks
+    <%= @list.name %> does not have any tasks... Try adding one?
 <% else %>
     <ul>
     <% @list.tasks.each do |task| %>
-        <li><%= task.description %> | <%= link_to "Delete",[@list, task], :method => :delete %></li>
+        <li><%= task.description %> | <%= link_to "Delete",[@list, task], :method => :delete %> | <%= link_to "Edit",[:edit, @list, task] %> </li>
     <% end %>
     </ul>
 <% end %>
