@@ -28,4 +28,14 @@ feature 'Tasks' do
     end
   end
 
+  feature "User deletes a task" do
+    scenario do
+      visit list_path(list)
+
+      click_link 'Delete', match: :first
+
+      expect(page).to have_content("Task deleted")
+    end
+  end
+
 end
