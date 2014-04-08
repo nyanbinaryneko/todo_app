@@ -2,9 +2,10 @@
     <h1>Add a new task</h1>
 </div>
 
-<%= simple_form_for @task, url: [@list, @task] do |f| %>
+<%= simple_form_for @task, url: [@list, @task], html:{class:"horizontal-form form-box"} do |f| %>
+    <div class="form-box-content">
     <%= f.input :description, required: true %>
 
     <%= f.button :submit, 'Add new Task', id: 'task_submit', class:'btn btn-default' %>
-
+    </div>
 <% end %>
