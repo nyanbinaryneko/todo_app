@@ -3,4 +3,5 @@
     <% @lists.each do |list| %>
         <li><%= link_to list.name, list %></li>
     <% end %>
+    <%= link_to "Add a new list" , [:new, :list]%>
 </ul>
