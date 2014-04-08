@@ -25,6 +25,7 @@ feature 'Tasks' do
       click_button :task_submit
 
       expect(page).to have_content("shitty edited task#1")
+      expect(page).to have_content("complete")
     end
   end
 
