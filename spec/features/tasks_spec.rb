@@ -21,7 +21,7 @@ feature 'Tasks' do
       visit edit_list_task_path(list, list.tasks.first)
 
       fill_in :task_description, with: "shitty edited task#1"
-      #select(:two, from: "Status")
+      select("Complete", from: "Status")
       click_button :task_submit
 
       expect(page).to have_content("shitty edited task#1")
