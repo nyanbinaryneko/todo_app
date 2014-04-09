@@ -25,9 +25,10 @@ feature "Todo Lists" do
     end
   end
 
+  given!(:lists) { 3.times.map { create :list } }
 
   feature "User views all lists" do
-    given!(:lists) { 3.times.map { create :list } }
+
 
     scenario do
       visit lists_path
@@ -46,6 +47,16 @@ feature "Todo Lists" do
       click_button :list_submit
 
       expect(page).to have_content('The list has been submitted.')
+    end
+  end
+
+  feature "User deletes a list" do
+    scenario do
+      visit lists_path
+
+      click_link 'Delete', match: :first
+
+      expect(page).to have_content("List Deleted")
     end
   end
 end

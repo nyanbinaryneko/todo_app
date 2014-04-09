@@ -6,7 +6,7 @@
 <% else %>
     <ul>
         <% @list.tasks.each do |task| %>
-            <li><%= task.description %> : <%= task.status %> | <%= link_to "Delete",[@list, task], :method => :delete %> | <%= link_to "Edit",[:edit, @list, task] %> </li>
+            <li><%= task.description %> : <%= task.status %> | <%= link_to "Delete",[@list, task], method: :delete %> | <%= link_to "Edit",[:edit, @list, task] %> </li>
         <% end %>
     </ul>
 <% end %>

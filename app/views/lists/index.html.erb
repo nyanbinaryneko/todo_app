@@ -4,7 +4,7 @@
 <div>
     <ul>
         <% @lists.each do |list| %>
-            <li><%= link_to list.name, list %></li>
+            <li><%= link_to list.name, list %> | <%= link_to 'Delete', [list], method: :delete %></li>
         <% end %>
     </ul>
 </div>

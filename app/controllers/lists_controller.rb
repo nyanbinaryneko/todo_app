@@ -22,6 +22,12 @@ class ListsController < ApplicationController
     end
   end
 
+  def destroy
+    @list = List.find(params[:id]).destroy
+    flash[:notice]= "List Deleted"
+    redirect_to @list
+  end
+
   private
   def list_params
     params.require(:list).permit(:name)
