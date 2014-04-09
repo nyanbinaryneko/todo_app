@@ -1,4 +1,4 @@
-<div class="jumbotron">
+<div class="banner">
     <h1>Lists</h1>
 </div>
 <div>
@@ -6,6 +6,5 @@
         <% @lists.each do |list| %>
             <li><%= link_to list.name, list %></li>
         <% end %>
-        <%= link_to "Add a new list" , [:new, :list]%>
     </ul>
 </div>

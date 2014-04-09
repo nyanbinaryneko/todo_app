@@ -1,21 +1,40 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Todo App</title>
-  <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
-  <%= javascript_include_tag 'jquery.js' %>
-  <%= javascript_include_tag 'jquery_ujs' %>
-  <%= csrf_meta_tags %>
+    <title>Todo App</title>
+    <%= stylesheet_link_tag  'application', media: 'all', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+    <%= javascript_include_tag 'jquery.js' %>
+    <%= javascript_include_tag 'jquery_ujs' %>
+    <%= csrf_meta_tags %>
 </head>
 <body>
-
-<% if flash[:notice] %>
-    <div class="banner">
-        <%= flash[:notice] %>
+<div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="container">
+            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <span class="brand push-left">ToDo App</span>
+            <div class="nav-collapse collapse">
+                <ul class="nav">
+                    <li><%= link_to "List", List %></li>
+                    <li><%= link_to "New List", [:new, :list] %></li>
+                </ul>
+            </div><!--/.nav-collapse -->
+        </div>
     </div>
-<% end %>
-<div class="container">
+</div>
+
+
+<div class="container content">
+    <% if flash[:notice] %>
+        <div class="banner alert-info">
+            <h2><strong><%= flash[:notice] %></strong></h2>
+        </div>
+    <% end %>
     <%= yield %>
 </div>
 </body>
