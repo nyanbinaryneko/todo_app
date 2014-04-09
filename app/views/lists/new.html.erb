@@ -1,4 +1,9 @@
-<%= simple_form_for @list do |f| %>
-    <%= f.input :name %>
-    <%= f.button :submit, 'Create List', id: 'list_submit' %>
+<div class="banner">
+    <h1>Create a new list</h1>
+</div>
+<%= simple_form_for @list, html:{ class:'form-horizontal' } do |f| %>
+    <%= f.input :name, required:true %>
+    <div class="form-actions">
+    <%= f.button :submit, 'Create List', id: 'list_submit', class:'btn' %>
+    </div>
 <% end %>

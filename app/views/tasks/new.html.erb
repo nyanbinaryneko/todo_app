@@ -1,11 +1,10 @@
-<div class="jumbotron">
-    <h1>Add a new task</h1>
+<div class="banner">
+    <h1>Add a new task to <%= @list.name %></h1>
 </div>
 
-<%= simple_form_for @task, url: [@list, @task], html:{class:"horizontal-form form-box"} do |f| %>
-    <div class="form-box-content">
+<%= simple_form_for @task, url: [@list, @task], html:{class:'form-horizontal'} do |f| %>
     <%= f.input :description, required: true %>
-
-    <%= f.button :submit, 'Add new Task', id: 'task_submit', class:'btn btn-default' %>
+    <div class="form-actions">
+    <%= f.button :submit, 'Add new a task', id: 'task_submit', class:'btn' %>
     </div>
 <% end %>
