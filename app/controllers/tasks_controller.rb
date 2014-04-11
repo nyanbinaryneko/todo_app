@@ -29,10 +29,6 @@ class TasksController < ApplicationController
     end
   end
 
-  def delete
-    @task = @list.tasks.find(params[:id]).destroy
-  end
-
   def destroy
     @task = @list.tasks.find(params[:id]).destroy
     flash[:notice]= "Task deleted"

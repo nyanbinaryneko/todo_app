@@ -57,6 +57,7 @@ feature "Todo Lists" do
       click_link 'Delete', match: :first
 
       expect(page).to have_content("List Deleted")
+
     end
   end
 end
