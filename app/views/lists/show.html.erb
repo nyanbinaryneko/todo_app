@@ -2,7 +2,7 @@
     <%= list.name %>
     <div class="pull-right">
         <%= link_to [:new, list, :task], class: "btn btn-primary", title: 'Add a Task', data: { toggle: 'tooltip', placement: 'bottom' } do %>
-            <i class="icon-plus icon-white"></i>
+            <i class="glyphicon glyphicon-plus"></i>
         <% end %>
     </div>
 </h1>
@@ -19,11 +19,11 @@
             <td><%= task.render_status %></td>
             <td>
                 <div class="btn-group">
-                    <%= link_to [list, task], id: "delete_task_#{task.id}", class: 'btn btn-mini btn-danger', method: :delete, title: 'Delete', data: { toggle: 'tooltip', confirm: "Are you sure you want to delete this task?" } do %>
-                        <i class="icon-remove icon-white"></i>
+                    <%= link_to [list, task], id: "delete_task_#{task.id}", class: 'btn btn-xs btn-danger', method: :delete, title: 'Delete', data: { toggle: 'tooltip', confirm: "Are you sure you want to delete this task?" } do %>
+                        <i class="glyphicon glyphicon-remove"></i>
                     <% end %>
-                    <%= link_to [:edit, list, task], id: "edit_task_#{task.id}", class: 'btn btn-mini btn-primary', title: 'Edit', data: { toggle: 'tooltip' } do %>
-                        <i class="icon-pencil icon-white"></i>
+                    <%= link_to [:edit, list, task], id: "edit_task_#{task.id}", class: 'btn btn-xs btn-primary', title: 'Edit', data: { toggle: 'tooltip' } do %>
+                        <i class="glyphicon glyphicon-pencil"></i>
                     <% end %>
                 </div>
             </td>

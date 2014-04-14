@@ -1,11 +1,13 @@
 <div class="banner">
     <h1>Edit task</h1>
 </div>
-<%= simple_form_for @task, url: [@list, @task], html:{class:'form-horizontal'} do |f| %>
+
+<%= simple_form_for @task, url: [@list, @task], wrapper: :bootstrap3_horizontal, defaults: {right_column_html: {class: "col-lg-3 col-md-3"},
+                                                                                            label_html: {class: "col-lg-2 col-md-2"} }, html: {class: "form-horizontal", role: "form"} do |f| %>
     <%= f.input :description,required: true  %>
     <%= f.input :status, include_blank: false %>
-    <div class="form-actions">
-        <%= f.button :submit, 'Edit a Task', id: 'task_submit', class:'btn' %>
+    <div class="col-md-2 col-md-offset-2">
+        <%= f.button :submit, 'Edit a Task', id: 'task_submit', class:'btn btn-primary' %>
     </div>
 
 <% end %>

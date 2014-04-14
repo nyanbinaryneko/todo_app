@@ -2,7 +2,7 @@
     Lists
     <div class="pull-right">
         <%= link_to [:new, :list], class: "btn btn-primary", title: 'Add a List', data: { toggle: 'tooltip', placement: 'bottom' } do %>
-            <i class="icon-plus icon-white"></i>
+            <i class="glyphicon glyphicon-plus"></i>
         <% end %>
     </div>
 </h1>
@@ -20,8 +20,8 @@
             <td><%= list.pending_task_count %></td>
             <td><%= list.complete_task_count %></td>
             <td>
-                <%= link_to [list], id: "delete_list_#{list.id}", title: 'Delete', data: { toggle: 'tooltip', confirm: "Are you sure you want to delete this list?" }, class:'btn btn-mini btn-danger', method: :delete do %>
-                    <i class="icon-remove icon-white"></i>
+                <%= link_to [list], id: "delete_list_#{list.id}", title: 'Delete', data: { toggle: 'tooltip', confirm: "Are you sure you want to delete this list?" }, class:'btn btn-xs btn-danger', method: :delete do %>
+                    <i class="glyphicon glyphicon-remove"></i>
                 <% end %>
             </td>
         </tr>

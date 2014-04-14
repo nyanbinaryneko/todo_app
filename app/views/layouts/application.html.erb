@@ -7,26 +7,8 @@
     <%= csrf_meta_tags %>
 </head>
 <body>
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <span class="brand push-left">ToDo App</span>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <li><%= link_to "List", [:lists] %></li>
-                </ul>
-            </div><!--/.nav-collapse -->
-        </div>
-    </div>
-</div>
 
-
-<div class="container content">
+<div class="container">
     <% if flash[:notice] %>
         <div class="banner alert-info">
             <h2><strong><%= flash[:notice] %></strong></h2>
