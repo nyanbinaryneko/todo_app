@@ -1,4 +1,11 @@
-<h1><%= list.name %></h1>
+<h1>
+    <%= list.name %>
+    <div class="pull-right">
+        <%= link_to [:new, list, :task], class: "btn btn-primary", title: 'Add a Task', data: { toggle: 'tooltip', placement: 'bottom' } do %>
+            <i class="icon-plus icon-white"></i>
+        <% end %>
+    </div>
+</h1>
 
 <table class="table">
     <tr>
@@ -27,5 +34,3 @@
         </tr>
     <% end %>
 </table>
-
-<%= link_to "Add a task", [:new, list, :task] %>
