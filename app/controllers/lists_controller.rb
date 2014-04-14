@@ -1,4 +1,6 @@
 class ListsController < ApplicationController
+  decorates_assigned :list, :lists
+
   def show
     @list = List.find(params[:id])
   end

@@ -1,6 +1,8 @@
 class TasksController < ApplicationController
   before_filter :load_list
 
+  decorates_assigned :list, :task, :tasks
+
   def new
     @task = @list.tasks.new
   end

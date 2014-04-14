@@ -1,10 +1,6 @@
-<div class="banner">
-    <h1>Lists</h1>
-</div>
-<div>
-    <ul>
-        <% @lists.each do |list| %>
-            <li><%= link_to list.name, list %> | <%= link_to 'Delete', [list], method: :delete %></li>
-        <% end %>
-    </ul>
-</div>
+<table class="table table-striped">
+    <tr><th colspan="2"><h1>Lists</h1></th></tr>
+    <% lists.each do |list| %>
+        <tr><td><%= link_to list.name, list %> </td><td> <%= link_to 'Delete', [list], method: :delete %></td></tr>
+    <% end %>
+</table>
